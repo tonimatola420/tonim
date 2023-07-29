@@ -1,0 +1,71 @@
+@import './index.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+#cart-div {
+  width: 300px;
+}
+
+#closeXsearch {
+  padding-left: 5px;
+}
+
+#close-cart-p {
+  margin-top: 2px;
+}
+
+#mobile-search-close-p {
+  margin-top: -20px;
+}
+
+/* Fix Algolia mobile searchbox design issues */
+
+#mobilesearchdiv {
+  position: absolute;
+  height: 200px;
+}
+
+.ais-SearchBox-submit {
+  width: 48px;
+}
+
+.ais-SearchBox-submitIcon {
+  display: none;
+}
+
+.ais-SearchBox-reset {
+  margin-left: 10px;
+}
+
+/* Fix Chrome padding issue */
+
+.ais-SearchBox-input[type='search']::-webkit-search-cancel-button {
+  display: none;
+}
+
+/* added from proshop */
+
+@layer utilities {
+  .section-min-height {
+      min-height: calc(100vh - 68px)
+  }
+
+  .toggle-btn {
+      @apply [&>div::before]:translate-y-0 [&>div::before]:rotate-45 [&>div::after]:translate-y-0 [&>div::after]:-rotate-45 [&>div]:bg-transparent [&>div]:rotate-[720deg]
+  }
+
+  /* .toggle-banner {
+      @apply [&>div::before]:translate-x-100 [&>div::after]:translate-x-200
+  } */
+
+  .toggle-banner {
+      @apply transform -translate-x-[210vw]
+  }
+}
+
+
+.btn {
+  @apply inline-flex h-9 cursor-pointer items-center justify-center rounded-md bg-transparent px-2 text-sm font-medium transition-colors hover:bg-zinc-100 focus:outline-none focus:bg-zinc-100 active:scale-95 disabled:pointer-events-none disabled:opacity-50 data-[state=open]:bg-transparent dark:text-zinc-100 dark:hover:bg-zinc-800 dark:hover:text-zinc-100 dark:focus:bg-zinc-800 dark:focus:ring-zinc-400 dark:focus:ring-offset-zinc-900 dark:data-[state=open]:bg-transparent
+}
